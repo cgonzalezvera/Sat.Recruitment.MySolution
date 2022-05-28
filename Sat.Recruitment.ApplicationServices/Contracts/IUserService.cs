@@ -1,5 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Sat.Recruitment.ApplicationServices.DataObjects;
+using Sat.Recruitment.Domain;
 
 namespace Sat.Recruitment.ApplicationServices.Contracts
 {

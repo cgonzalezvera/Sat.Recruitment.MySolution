@@ -16,7 +16,7 @@ namespace Sat.Recruitment.Api.Domain.Services
         {
         }
 
-        public override decimal UpdateMoneyValue()
+        public override decimal GetUpdatedMoneyValue()
         {
             var money = ModelUserModel.Money;
             if (money > MaxMoney)
@@ -27,14 +27,11 @@ namespace Sat.Recruitment.Api.Domain.Services
                 return money + gif;
             }
 
-            if (money < MaxMoney)
+            if (money < MaxMoney && money > MinMoney)
             {
-                if (money > MinMoney)
-                {
                     var percentage = Convert.ToDecimal(PercMinMoney);
                     var gif = money * percentage;
                     return money + gif;
-                }
             }
 
             return money;

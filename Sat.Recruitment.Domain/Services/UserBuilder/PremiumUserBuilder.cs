@@ -11,7 +11,7 @@ namespace Sat.Recruitment.Domain.Services.UserBuilder
         {
         }
 
-        public override decimal UpdateMoneyValue()
+        public override decimal GetUpdatedMoneyValue()
         {
             var money = ModelUserModel.Money;
             if (money > MinMoney)

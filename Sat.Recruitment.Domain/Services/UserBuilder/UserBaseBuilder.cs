@@ -32,10 +32,10 @@ namespace Sat.Recruitment.Domain.Services.UserBuilder
                 Address = ModelUserModel.Address,
                 Phone = ModelUserModel.Phone,
                 UserType = ModelUserModel.UserType,
-                Money = UpdateMoneyValue()
+                Money = GetUpdatedMoneyValue()
             };
         }
 
-        public abstract decimal UpdateMoneyValue();
+        public abstract decimal GetUpdatedMoneyValue();
     }
 }
