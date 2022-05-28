@@ -1,14 +1,15 @@
-﻿using Sat.Recruitment.Api.Domain.Contracts;
+﻿using System;
 using Sat.Recruitment.Api.Domain.Services.Contracts;
+using Sat.Recruitment.Domain.Contracts;
 
 namespace Sat.Recruitment.Api.Domain.Services
 {
-    public sealed class PremiumUserBuilder : UserBaseBuilder
+    public sealed class SuperUserBuilder : UserBaseBuilder
     {
         private const decimal MinMoney = 100;
-        private const double Coefficient = 0.8;
+        private const double Percent = 0.8;
 
-        public PremiumUserBuilder(IUserModel modelUserModel) : base(modelUserModel)
+        public SuperUserBuilder(IUserModel modelUserModel) : base(modelUserModel)
         {
         }
 
@@ -17,10 +18,10 @@ namespace Sat.Recruitment.Api.Domain.Services
             var money = ModelUserModel.Money;
             if (money > MinMoney)
             {
-                var gif = money * (decimal) Coefficient;
+                var percentage = Convert.ToDecimal(Percent);
+                var gif = money * percentage;
                 return money + gif;
             }
-
 
             return money;
         }

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Omu.ValueInjecter;
 using Sat.Recruitment.Api.ApiModels;
-using Sat.Recruitment.Api.Services.Contracts;
-using Sat.Recruitment.Api.Services.DataObjects;
+using Sat.Recruitment.ApplicationServices.Contracts;
+using Sat.Recruitment.ApplicationServices.DataObjects;
 
 namespace Sat.Recruitment.Api.Controllers
 {
