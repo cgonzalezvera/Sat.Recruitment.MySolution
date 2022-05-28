@@ -1,8 +1,7 @@
 ﻿using System;
-using Sat.Recruitment.Api.Domain.Services.Contracts;
 using Sat.Recruitment.Domain.Contracts;
 
-namespace Sat.Recruitment.Api.Domain.Services
+namespace Sat.Recruitment.Domain.Services.UserBuilder
 {
     public sealed class SuperUserBuilder : UserBaseBuilder
     {
@@ -13,7 +12,7 @@ namespace Sat.Recruitment.Api.Domain.Services
         {
         }
 
-        public override decimal CalculeMoney()
+        public override decimal UpdateMoneyValue()
         {
             var money = ModelUserModel.Money;
             if (money > MinMoney)

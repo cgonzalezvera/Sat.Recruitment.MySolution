@@ -2,7 +2,6 @@ using System.IO;
 using System.Threading.Tasks;
 using Sat.Recruitment.Api.ApiModels;
 using Sat.Recruitment.Api.Controllers;
-using Sat.Recruitment.Api.Domain.Services;
 using Sat.Recruitment.ApplicationServices;
 using Sat.Recruitment.DataAccess.Implementation;
 using Sat.Recruitment.Domain;

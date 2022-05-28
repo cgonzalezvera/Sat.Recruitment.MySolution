@@ -1,8 +1,7 @@
 ﻿using System;
-using Sat.Recruitment.Domain;
 using Sat.Recruitment.Domain.Contracts;
 
-namespace Sat.Recruitment.Api.Domain.Services
+namespace Sat.Recruitment.Domain.Services.UserBuilder
 {
     public abstract class UserBaseBuilder
     {
@@ -33,10 +32,10 @@ namespace Sat.Recruitment.Api.Domain.Services
                 Address = ModelUserModel.Address,
                 Phone = ModelUserModel.Phone,
                 UserType = ModelUserModel.UserType,
-                Money = CalculeMoney()
+                Money = UpdateMoneyValue()
             };
         }
 
-        public abstract decimal CalculeMoney();
+        public abstract decimal UpdateMoneyValue();
     }
 }

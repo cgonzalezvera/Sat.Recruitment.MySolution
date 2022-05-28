@@ -1,5 +1,7 @@
 ﻿using System;
 using Sat.Recruitment.Domain.Contracts;
+using Sat.Recruitment.Domain.Services;
+using Sat.Recruitment.Domain.Services.UserBuilder;
 
 namespace Sat.Recruitment.Api.Domain.Services
 {
@@ -14,7 +16,7 @@ namespace Sat.Recruitment.Api.Domain.Services
         {
         }
 
-        public override decimal CalculeMoney()
+        public override decimal UpdateMoneyValue()
         {
             var money = ModelUserModel.Money;
             if (money > MaxMoney)
