@@ -31,8 +31,11 @@ namespace Sat.Recruitment.Api.Controllers
 
         [HttpPost]
         [Route("/create-user")]
-        public async Task<Result> CreateUser(CreateUserRequest model)
+        public async Task<Result> CreateUser([FromBody] CreateUserRequest model)
         {
+            // improvements nice to have
+            //https://kevsoft.net/2020/02/09/adding-errors-to-model-state-and-returning-bad-request-within-asp-net-core-3-1.html
+            //https://docs.microsoft.com/en-us/answers/questions/620570/net-core-web-api-model-validation-error-response-t.html
             if (!ModelState.IsValid)
             {
                 return CreateErrorParameters(ModelState.Values);
