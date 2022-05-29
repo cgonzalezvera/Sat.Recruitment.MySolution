@@ -19,7 +19,7 @@ Despues de realizar un refactoreo a la solucion monolitica planteada el diseño 
 
 Se busco que cada componente tenga unas pocas responsabilidades, siendo una sola lo ideal.
 Por ejemplo el controller UserController en la version inicial hacia desde validaciones de los parametros,
-aplicacion de reglas de negocios sobre los  usuarios, lectura de usuarios desde un archivo y controles de duplicacion.
+aplicacion de reglas de negocios sobre los  usuarios, lectura de usuarios desde un archivo hasta controles de duplicacion.
 Es decir, el metodo POST principal era responsabled de multitud de intereses.
 
 Luego de la reorganizacion se llego a la cantidad de layers indicadas al principio. Esto brinda ventajas de:
