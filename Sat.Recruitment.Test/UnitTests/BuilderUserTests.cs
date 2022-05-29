@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using Moq;
-using Sat.Recruitment.Api.Domain.Services;
 using Sat.Recruitment.Domain.Contracts;
 using Sat.Recruitment.Domain.Services.UserBuilder;
 using Xunit;
@@ -16,7 +14,7 @@ namespace Sat.Recruitment.Test.UnitTests
             const decimal moneyValueInitial=101;
             var mockUserModel = new Mock<IUserModel>();
             mockUserModel.SetupGet(x => x.Money).Returns(moneyValueInitial);
-            var userNormal = new NormalUserBuilder(mockUserModel.Object);
+            var userNormal = new NormalUserBuilder(mockUserModel.Object,null);
             var expectedValue = 113.12m;
             // ACT
             var moneyUpdated = userNormal.GetUpdatedMoneyValue();
@@ -31,7 +29,7 @@ namespace Sat.Recruitment.Test.UnitTests
             const decimal moneyValueInitial=20;
             var mockUserModel = new Mock<IUserModel>();
             mockUserModel.SetupGet(x => x.Money).Returns(moneyValueInitial);
-            var userNormal = new NormalUserBuilder(mockUserModel.Object);
+            var userNormal = new NormalUserBuilder(mockUserModel.Object,null);
             var expectedValue = 36.0m;
             // ACT
             var moneyUpdated = userNormal.GetUpdatedMoneyValue();
@@ -46,7 +44,7 @@ namespace Sat.Recruitment.Test.UnitTests
             const decimal moneyValueInitial=5;
             var mockUserModel = new Mock<IUserModel>();
             mockUserModel.SetupGet(x => x.Money).Returns(moneyValueInitial);
-            var userNormal = new NormalUserBuilder(mockUserModel.Object);
+            var userNormal = new NormalUserBuilder(mockUserModel.Object,null);
             // ACT
             var moneyUpdated = userNormal.GetUpdatedMoneyValue();
             // ASSERT
@@ -61,7 +59,7 @@ namespace Sat.Recruitment.Test.UnitTests
             const decimal moneyValueInitial=101;
             var mockUserModel = new Mock<IUserModel>();
             mockUserModel.SetupGet(x => x.Money).Returns(moneyValueInitial);
-            var userNormal = new SuperUserBuilder(mockUserModel.Object);
+            var userNormal = new SuperUserBuilder(mockUserModel.Object,null);
             var expectedValue = 181.8m;
             // ACT
             var moneyUpdated = userNormal.GetUpdatedMoneyValue();
@@ -77,7 +75,7 @@ namespace Sat.Recruitment.Test.UnitTests
             const decimal moneyValueInitial=110;
             var mockUserModel = new Mock<IUserModel>();
             mockUserModel.SetupGet(x => x.Money).Returns(moneyValueInitial);
-            var userNormal = new SuperUserBuilder(mockUserModel.Object);
+            var userNormal = new SuperUserBuilder(mockUserModel.Object,null);
             var expectedValue = 198m;
             // ACT
             var moneyUpdated = userNormal.GetUpdatedMoneyValue();

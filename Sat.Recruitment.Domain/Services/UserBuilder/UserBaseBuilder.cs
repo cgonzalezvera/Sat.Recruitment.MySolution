@@ -1,26 +1,17 @@
-﻿using System;
-using Sat.Recruitment.Domain.Contracts;
+﻿using Sat.Recruitment.Domain.Contracts;
+using Sat.Recruitment.Domain.Services.Contracts;
 
 namespace Sat.Recruitment.Domain.Services.UserBuilder
 {
     public abstract class UserBaseBuilder
     {
         protected readonly IUserModel ModelUserModel;
+        private readonly IEmailNormalize _emailNormalize;
 
-        protected UserBaseBuilder(IUserModel modelUserModel)
+        protected UserBaseBuilder(IUserModel modelUserModel, IEmailNormalize emailNormalize)
         {
             ModelUserModel = modelUserModel;
-        }
-
-        private static string NormalizeEmail(string email)
-        {
-            var aux = email.Split(new char[] {'@'}, StringSplitOptions.RemoveEmptyEntries);
-
-            var atIndex = aux[0].IndexOf("+", StringComparison.Ordinal);
-
-            aux[0] = atIndex < 0 ? aux[0].Replace(".", "") : aux[0].Replace(".", "").Remove(atIndex);
-
-            return string.Join("@", aux[0], aux[1]);
+            _emailNormalize = emailNormalize;
         }
 
         public User Build()
@@ -28,7 +19,7 @@ namespace Sat.Recruitment.Domain.Services.UserBuilder
             return new User
             {
                 Name = ModelUserModel.Name,
-                Email = NormalizeEmail(ModelUserModel.Email),
+                Email = _emailNormalize.Normalize(ModelUserModel.Email),
                 Address = ModelUserModel.Address,
                 Phone = ModelUserModel.Phone,
                 UserType = ModelUserModel.UserType,

@@ -1,9 +1,8 @@
 ﻿using System;
 using Sat.Recruitment.Domain.Contracts;
-using Sat.Recruitment.Domain.Services;
-using Sat.Recruitment.Domain.Services.UserBuilder;
+using Sat.Recruitment.Domain.Services.Contracts;
 
-namespace Sat.Recruitment.Api.Domain.Services
+namespace Sat.Recruitment.Domain.Services.UserBuilder
 {
     public sealed class NormalUserBuilder : UserBaseBuilder
     {
@@ -12,7 +11,7 @@ namespace Sat.Recruitment.Api.Domain.Services
         private const double PercMaxMoney = 0.12;
         private const double PercMinMoney = 0.8;
 
-        public NormalUserBuilder(IUserModel modelUserModel) : base(modelUserModel)
+        public NormalUserBuilder(IUserModel modelUserModel, IEmailNormalize emailNormalize) : base(modelUserModel,emailNormalize)
         {
         }
 

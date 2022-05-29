@@ -1,7 +1,6 @@
-﻿using Sat.Recruitment.Domain;
-using Sat.Recruitment.Domain.Contracts;
+﻿using Sat.Recruitment.Domain.Contracts;
 
-namespace Sat.Recruitment.Api.Domain.Services.Contracts
+namespace Sat.Recruitment.Domain.Services.Contracts
 {
     public interface IUserBuilderDirectorService
     {

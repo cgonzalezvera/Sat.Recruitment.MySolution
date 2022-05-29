@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Sat.Recruitment.Api.Domain.Services.Contracts;
 using Sat.Recruitment.ApplicationServices.Contracts;
 using Sat.Recruitment.ApplicationServices.DataObjects;
 using Sat.Recruitment.Domain;
 using Sat.Recruitment.Domain.Contracts;
+using Sat.Recruitment.Domain.Services.Contracts;
 
 namespace Sat.Recruitment.ApplicationServices
 {

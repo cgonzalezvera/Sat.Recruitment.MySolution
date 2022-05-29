@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using Sat.Recruitment.Api.Domain;
+﻿using System.ComponentModel.DataAnnotations;
 using Sat.Recruitment.Domain;
 
 namespace Sat.Recruitment.Api.ApiModels

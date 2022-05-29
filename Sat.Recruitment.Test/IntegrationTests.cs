@@ -18,8 +18,9 @@ namespace Sat.Recruitment.Test
         public IntegrationTests()
         {
             var usersFromFile = new UsersFromFile(GetFullPath);
+            var emailNormalize = new DefaultNormalizeEmail();
             var streamUserRepository = new StreamUserRepository(usersFromFile, new UserTextLineValidator());
-            var userService = new UserService(streamUserRepository,new UserBuilderDirectorDefaultService());
+            var userService = new UserService(streamUserRepository,new UserBuilderDirectorDefaultService(emailNormalize));
             _usersController = new UsersController(userService);
         }
 

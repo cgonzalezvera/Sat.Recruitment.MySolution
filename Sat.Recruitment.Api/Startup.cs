@@ -1,18 +1,16 @@
 using System.IO;
-using System.Net;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Sat.Recruitment.Api.Domain.Services;
-using Sat.Recruitment.Api.Domain.Services.Contracts;
 using Sat.Recruitment.ApplicationServices;
 using Sat.Recruitment.ApplicationServices.Contracts;
 using Sat.Recruitment.DataAccess.Contracts;
 using Sat.Recruitment.DataAccess.Implementation;
 using Sat.Recruitment.Domain.Contracts;
 using Sat.Recruitment.Domain.Services;
+using Sat.Recruitment.Domain.Services.Contracts;
 
 namespace Sat.Recruitment.Api
 {
@@ -37,6 +35,7 @@ namespace Sat.Recruitment.Api
             
             services.AddScoped<IUserRepository,StreamUserRepository>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IEmailNormalize, DefaultNormalizeEmail>();
             services.AddScoped<IUserBuilderDirectorService, UserBuilderDirectorDefaultService>();
 
             services.AddControllers();

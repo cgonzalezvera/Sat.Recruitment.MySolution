@@ -1,5 +1,6 @@
 ﻿using System;
 using Sat.Recruitment.Domain.Contracts;
+using Sat.Recruitment.Domain.Services.Contracts;
 
 namespace Sat.Recruitment.Domain.Services.UserBuilder
 {
@@ -8,7 +9,7 @@ namespace Sat.Recruitment.Domain.Services.UserBuilder
         private const decimal MinMoney = 100;
         private const double Percent = 0.8;
 
-        public SuperUserBuilder(IUserModel modelUserModel) : base(modelUserModel)
+        public SuperUserBuilder(IUserModel modelUserModel, IEmailNormalize emailNormalize) : base(modelUserModel,emailNormalize)
         {
         }
 
