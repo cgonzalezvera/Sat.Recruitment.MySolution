@@ -4,8 +4,8 @@
 
 ## Lenguaje de programación y frameworks usados
 - La plataforma en que se desarrollo es netcore 3.1
-- MOQ para hacer mock de dependencias en los tests.
-- 
+- Moq para hacer mock de dependencias en los tests.
+
 ##  Consideraciones generales sobre la solución
 - No se usa ningun motor de base de datos. Ni relacional ni noSQL.
 
