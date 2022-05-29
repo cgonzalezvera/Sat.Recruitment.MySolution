@@ -1,6 +1,6 @@
 # SAT Recruitment
 
-### Autor de la solución: Claudio González Vera
+### Autor: Claudio González Vera
 
 ## Lenguaje de programación y frameworks usados
 - La plataforma en que se desarrollo es netcore 3.1
