@@ -11,11 +11,26 @@ Content-Type: application/json
 
 {
   "name": "claudio",
-  "email": "pepe@argento.com,
+  "email": "pepe@argento.com",
   "address": "ciudad 1111",
   "phone": "22222222",
   "userType": 0,
   "money": 102
+}
+
+###
+
+### Request para intentar crear un usuario que ya existe
+POST http://localhost:5000/create-user
+Content-Type: application/json
+
+{
+  "name": "Franco",
+  "email": "Franco.Perez@gmail.com",
+  "address": "Alvear y Colombres",
+  "phone": "+534645213542",
+  "userType": 2,
+  "money": 1500
 }
 
 ###
