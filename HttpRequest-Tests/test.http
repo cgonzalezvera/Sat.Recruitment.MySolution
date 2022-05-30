@@ -1,0 +1,22 @@
+### Request para probar que esta corriendo la app
+GET http://localhost:5000/ping
+Accept: application/json
+
+<> 2022-05-29T204309.200.json
+
+### Request para crear un usuario no existente
+
+POST http://localhost:5000/create-user
+Content-Type: application/json
+
+{
+  "name": "claudio",
+  "email": "pepe@argento.com,
+  "address": "ciudad 1111",
+  "phone": "22222222",
+  "userType": 0,
+  "money": 102
+}
+
+###
+
